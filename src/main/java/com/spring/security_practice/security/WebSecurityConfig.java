@@ -55,6 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests().
                 antMatchers("/"
                         , "/students/greet"
+                        ,"/register"
                         ,"index.html"
                         ,"/css/*"
                         ,"/js/*")
