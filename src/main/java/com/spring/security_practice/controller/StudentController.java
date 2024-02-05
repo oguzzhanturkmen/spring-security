@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,7 @@ public class StudentController {
     private final StudentService service;
 
     @GetMapping("/greet")
+    @PreAuthorize("hasRole('ADMIN')")
     public String greet(){
         return "Hello Spring Boot:)";
     }
